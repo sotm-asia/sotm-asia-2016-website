@@ -4,8 +4,10 @@ title: Register
 permalink: /register/
 ---
 
-Blurb
+**Coming soon**
 
-Drop link
+[comment]: <> # Blurb
+
+[comment]: <> # Drop link here
 
 
