@@ -21,7 +21,7 @@ Applications are due by **30th August 2016**.
 * OSM and Disaster Risk Management
 * OSM for your organization (Government, NGOs, Aacademe, Business)
 * The State of the Map `[your country]`
-* Data qulity and validation
+* Data quality and validation
 * Workshops and mapping parties.
 
 **[Submit your proposal using this form](some form)**

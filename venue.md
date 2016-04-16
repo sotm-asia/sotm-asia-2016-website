@@ -16,7 +16,7 @@ permalink: /venue/
 
 *The Oblation of the University of the Philippines Diliman during the 2014 edition of the campus' Lantern Parade. Source: [Wikimedia](https://commons.wikimedia.org/wiki/File:UPDilimanObationLanternParade.jpg)*
 
-# Accomodations
+# Accommodations
 
 ## Visa
 
