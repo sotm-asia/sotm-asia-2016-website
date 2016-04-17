@@ -4,10 +4,6 @@ title: Register
 permalink: /register/
 ---
 
-**Coming soon**
-
-[comment]: <> # Blurb
-
-[comment]: <> # Drop link here
+Visit our RSVP registration page: https://sotmasia2016.splashthat.com
 
 
