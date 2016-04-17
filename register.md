@@ -4,6 +4,5 @@ title: Register
 permalink: /register/
 ---
 
-Visit our RSVP registration page: https://sotmasia2016.splashthat.com
-
+Visit our RSVP registration page: [https://sotmasia2016.splashthat.com](https://sotmasia2016.splashthat.com)
 
