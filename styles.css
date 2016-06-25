@@ -51,7 +51,8 @@ html,body {
 
 #banner {
   width: 100%;
-  background: #300;
+  background: #300 url(banner.png);
+  background-size: cover;
 }
 
 #banner img {
