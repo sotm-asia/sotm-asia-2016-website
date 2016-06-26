@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Venue | State of the Map Asia 2016</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela+Round">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic">
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.css" />
+<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css">
+<link rel="stylesheet" href="leaflet.extra-markers.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="http://cdn.leafletjs.com/leaflet/v1.0.0-rc.1/leaflet.js"></script>
+<script src="leaflet.extra-markers.min.js"></script>
+<style>
+.marker-inner {
+  color: #fff;
+  font-family: "Varela Round", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 6px 0 0 1px;
+}
+.marker-inner-2 {
+  width: 32px;
+  color: #fff;
+  font-family: "Varela Round", sans-serif;
+  font-size: 11px;
+  line-height: 10px;
+  font-weight: bold;
+  padding: 8px 0 0 2px;
+}
+</style>
+</head>
+<body>
+
+ <nav id="main-nav">
+  <div>
+   <a href="index.html" id="main-nav-home">SotM Asia 2016</a>
+   <ul id="main-nav-menu">
+    <li><a href="program.html">Program</a></li>
+    <li class="active"><a href="venue.html">Venue</a></li>
+    <li><a href="code-of-conduct.html">Code of Conduct</a></li>
+   </ul>
+  </div>
+ </nav>
+
+ <section id="banner-internal">
+  <img src="sotm-asia-2016-logo.png" alt="State of the Map Asia 2016">
+ </section>
+
+ <article id="content">
+  <h1>Conference Venue</h1>
+  <p>State of the Map Asia 2016 is graciously hosted by the
+   <strong><a href="http://upd.edu.ph/">University of the Philippines Diliman</a></strong>
+   through the <a href="http://dge.upd.edu.ph/dge/">Department of Geodetic Engineering</a>.</p>
+
+  <div id="map-wrap"><div id="map"></div></div>
+
+  <h1>Accommodations</h1>
+  <p>There are plenty of affordable hotels and hostels near the conference
+   venue. Shown below is a list of some hotels and each one is depicted on
+   the map above.</p>
+  <ol>
+   <li>University Hotel</li>
+   <li>Microtel</li>
+   <li>Oracle Residences</li>
+   <li>The Sulô Riviera</li>
+   <li>Fersal Hotel (Kalayaan)</li>
+   <li>Fersal Hotel (Malakas)</li>
+  </ol>
+ </article>
+
+ <aside id="footer">
+ </aside>
+
+ <script>
+"use strict";
+
+// App parameters
+var TILE_LAYER_URL         = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+var TILE_LAYER_ATTRIBUTION = 'Base map &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>';
+var TILE_LAYER_MAX_ZOOM    = 19;
+
+// Function to initialize the app once the page has been loaded
+function init() {
+
+  // Initialize the map and add the tile layer
+  var map = new L.map('map');
+  new L.tileLayer(TILE_LAYER_URL, {
+    attribution: TILE_LAYER_ATTRIBUTION,
+    maxZoom: TILE_LAYER_MAX_ZOOM,
+  }).addTo(map);
+
+  // Add markers
+  var minLat = 90, maxLat = 0, minLon = 180, maxLon = 0;
+  for (var i = 0; i < MapData.length; i++) {
+    var data = MapData[i];
+    minLat = Math.min(data.lat, minLat);
+    maxLat = Math.max(data.lat, maxLat);
+    minLon = Math.min(data.lon, minLon);
+    maxLon = Math.max(data.lon, maxLon);
+
+    var redMarker = L.ExtraMarkers.icon({
+      markerColor: data.color,
+      shape: 'circle',
+      innerHTML: (
+        data.color != 'red'
+        ? ('<div class="marker-inner">' + data.label + '</div>')
+        : ('<div class="marker-inner-2">' + data.label + '</div>')),
+    });
+
+    L.marker([data.lat, data.lon], {icon: redMarker}).addTo(map);
+  }
+
+  // Set map view
+  map.fitBounds([[minLat, minLon], [maxLat, maxLon]]);
+}
+window.addEventListener('load', init);
+
+var MapData = [
+  {lat: 14.65650, lon: 121.06993, title: "Department of Geodetic Engineering", color: "red", label: "SO TM"},
+  {lat: 14.66117, lon: 121.07295, title: "University Hotel", color: "orange", label: "1"},
+  {lat: 14.65937, lon: 121.05984, title: "Microtel", color: "orange", label: "2"},
+  {lat: 14.63934, lon: 121.07402, title: "Oracle Residences", color: "orange", label: "3"},
+  {lat: 14.64505, lon: 121.04951, title: "The Sulô Riviera", color: "orange", label: "4"},
+  {lat: 14.64624, lon: 121.05305, title: "Fersal Hotel (Kalayaan)", color: "orange", label: "5"},
+  {lat: 14.64409, lon: 121.04943, title: "Fersal Hotel (Malakas)", color: "orange", label: "6"},
+]
+ </script>
+</body>
+</html>
