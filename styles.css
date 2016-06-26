@@ -1,14 +1,17 @@
 html,body {
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
 }
 
 #main-nav {
   position: fixed;
   width: 100%;
-  height: 40px;
+  height: 39px;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 16px;
   font-family: "Varela Round", sans-serif;
   background: #522;
   border-bottom: 1px solid #844;
@@ -22,11 +25,13 @@ html,body {
 }
 
 #main-nav-home {
+  display: block;
   position: absolute;
   top: 0; left: 0;
-  display: block;
   text-decoration: none;
+  font-weight: bold;
   color: #fdd;
+  text-transform: uppercase;
 }
 
 #main-nav-menu {
@@ -38,7 +43,18 @@ html,body {
 #main-nav-menu li {
   display: block;
   float: left;
-  padding-left: 16px;
+  margin-left: 16px;
+}
+
+#main-nav-home, #main-nav-menu li {
+  padding: 9px 0 11px;
+  border-top: 3px solid #522;
+  border-bottom: 1px solid #844;
+}
+
+#main-nav-home.active, #main-nav-menu li.active {
+  padding-bottom: 9px;
+  border-bottom: 3px solid #fe8;
 }
 
 #main-nav-menu a {
@@ -51,19 +67,23 @@ html,body {
 
 #banner {
   width: 100%;
+  height: 400px;
+  padding-top: 40px;
   background: #300 url(banner.png);
   background-size: cover;
 }
 
 #banner img {
   display: block;
-  height: 350px;
+  height: 300px;
+  padding: 50px 0;
+  margin: 0 auto;
 }
 
 #intro {
+  padding: 50px 0;
   font-family: "Varela Round", sans-serif;
   background: #633;
-  padding: 50px 0;
   color: #fff;
 }
 
@@ -79,12 +99,18 @@ html,body {
 }
 
 #intro h1 .heart {
+  font-size: 1.3em;
   color: #f44;
 }
 
 #intro-blurb {
   font-size: 20px;
   line-height: 30px;
+}
+
+#intro-blurb strong {
+  font-weight: normal;
+  color: #faa;
 }
 
 #intro .wrap {
@@ -119,16 +145,62 @@ html,body {
   text-decoration: none;
   padding: 10px 20px 7px;
   font-size: 20px;
-  background: #fcc;
-  background-image: linear-gradient(to bottom, #fcc, #e77);
-  color: #844;
+  background: #fec;
+  background-image: linear-gradient(to bottom, #fe8, #ec4);
+  color: #a60;
   border-radius: 5px;
-  border-bottom: 3px solid #b44;
+  border-bottom: 3px solid #b84;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2)
 }
 #register-call a:hover {
-  background-image: linear-gradient(to bottom, #fbb, #e66);
-  color: #c44;
+  background-image: linear-gradient(to bottom, #ff8, #ed2);
+  color: #a80;
+}
+
+#sister-events {
+  padding: 30px 0;
+  background: #fdd;
+}
+
+#sister-events .wrap {
+  width: 800px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+#sister-events .event {
+  position: relative;
+  float: left;
+  width: 370px;
+}
+
+#sister-events .event:first-of-type {
+  padding-right: 40px;
+}
+
+#sister-events h2 {
+  padding-top: 24px;
+  font-size: 24px;
+  font-family: "Varela Round", sans-serif;
+  color: #633;
+}
+
+#sister-events .event-type {
+  position: absolute;
+  top: 0;
+  font-size: 16px;
+  font-family: "Varela Round", sans-serif;
+  color: #f44;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#sister-events a {
+  text-decoration: none;
+  color: #f44;
+}
+#sister-events a:hover {
+  color: inherit;
 }
 
 #sponsor-invitation {
@@ -136,7 +208,7 @@ html,body {
   margin: 0 auto;
   padding: 50px 0;
   font-size: 14px;
-  font-family: "Open Sans", sans-serif;
+  line-height: 20px;
 }
 
 #sponsor-invitation strong {
@@ -154,4 +226,73 @@ html,body {
 }
 #sponsor-invitation a:hover {
   color: inherit;
+}
+
+#banner-internal {
+  width: 800px;
+  margin: 0 auto;
+}
+
+#banner-internal img {
+  float: left;
+  margin-top: 100px;
+  width: 150px;
+}
+
+#content {
+  padding: 100px 0 50px;
+}
+
+#content h1 {
+  width: 600px;
+  margin: 0 auto;
+  padding-left: 200px;
+  font-size: 24px;
+  font-family: "Varela Round", sans-serif;
+  color: #f88;
+}
+#content *+h1 {
+  margin-top: 50px;
+}
+
+#content h2 {
+  width: 600px;
+  margin: 0 auto;
+  padding-left: 200px;
+  font-size: 16px;
+  font-family: "Varela Round", sans-serif;
+  color: #f44;
+}
+
+#content p {
+  width: 600px;
+  margin: 10px auto;
+  padding-left: 200px;
+}
+#content ul {
+  width: 570px;
+  margin: 10px auto;
+  padding-left: 230px;
+}
+
+#content li {
+  padding-left: 10px;
+}
+
+
+#content .content-submit {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px 7px;
+  font-size: 18px;
+  font-family: "Varela Round", sans-serif;
+  background: #fec;
+  background-image: linear-gradient(to bottom, #fe8, #ec4);
+  color: #a60;
+  border-radius: 5px;
+  border-bottom: 3px solid #b84;
+}
+#content .content-submit:hover {
+  background-image: linear-gradient(to bottom, #ff8, #ed2);
+  color: #a80;
 }
