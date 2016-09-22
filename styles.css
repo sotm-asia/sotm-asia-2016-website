@@ -456,18 +456,38 @@ html,body {
   border: 1px solid #f44;
 }
 
+#content table {
+  margin: 20px 0;
+  border-collapse: collapse;
+}
+
+#content table th, #content table td {
+  vertical-align: top;
+  border: 1px solid #888;
+  padding: 8px 12px 10px;
+}
+
+#content dt {
+  float: left;
+  width: 100px;
+  font-weight: bold;
+}
+
+#content dd {
+}
+
 @media only screen and (min-width:840px) {
 
   #content {
     padding: 100px 0 50px;
   }
 
-  #content h1, #content h2, #content p, #content ul, #content ol, #map-wrap {
+  #content h1, #content h2, #content p, #content ul, #content ol, #content dl, #content .table-wrapper, #map-wrap {
     margin-left: auto;
     margin-right: auto;
   }
 
-  #content h1, #content h2, #content p, #map-wrap {
+  #content h1, #content h2, #content p, #content .table-wrapper, #content dl, #map-wrap {
     width: 600px;
     padding-left: 200px;
   }
@@ -485,7 +505,7 @@ html,body {
     padding: 30px 0;
   }
 
-  #content h1, #content h2, #content p, #content ul, #content ol, #map-wrap {
+  #content h1, #content h2, #content p, #content ul, #content ol, #content dl, #content .table-wrapper, #map-wrap {
     margin-left: 20px;
     margin-right: 20px;
   }
@@ -494,4 +514,87 @@ html,body {
     padding-left: 30px;
   }
 
+}
+
+/* === Program table === */
+
+#content thead th {
+  background: #ccc;
+}
+
+#content tbody th {
+  background: #ddd;
+  font-size: 0.85em;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+#content tbody th.normal {
+  height: 120px;
+}
+
+td.normal    { background: #fff; }
+td.break     { background: #eee; font-style: italic; }
+td.keynote   { background: #fcc; }
+td.lightning { background: #fdb; }
+td.panel     { background: #fca; }
+td.workshop  { background: #faa; }
+
+.session-class {
+  margin: -8px -12px 8px;
+  padding: 2px 12px;
+  font-size: 0.85em;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a66;
+  background: rgba(255,0,0,0.1);
+}
+
+.keynote-speaker, .session-title {
+  line-height: 1.3em;
+  font-size: 1.1em;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  color: #a32;
+}
+
+.keynote-designation, .session-presenter {
+  margin-top: 0.5em;
+  line-height: 1.3em;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.lightning-item {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 0.5em;
+  line-height: 1.3em;
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.lightning-item strong {
+  display: block;
+  line-height: 1.3em;
+  font-size: 1.3em;
+  font-family: "Varela Round", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+  color: #a32;
+}
+
+.lightning-item+.lightning-item {
+  margin-top: 12px;
+}
+
+.lightning-item:before {
+  position: absolute;
+  font-size: 1.4em;
+  left: 0;
+  content: "▸";
+  color: #844;
 }
