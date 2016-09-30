@@ -383,6 +383,24 @@ html,body {
 
 /* === Internal banner === */
 
+#banner-internal {
+  font-family: "Varela Round", sans-serif;
+}
+
+
+#banner-internal .x {
+  text-align: center;
+  font-size: 30px;
+}
+
+#banner-internal .extra-title {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 23px;
+  line-height: 25px;
+  font-weight: bold;
+}
+
 @media only screen and (min-width:840px) {
 
   #banner-internal {
@@ -391,10 +409,18 @@ html,body {
     margin-right: auto;
   }
 
-  #banner-internal img {
+  #banner-internal img, #banner-internal .x, #banner-internal .extra-title {
+    clear: left;
     float: left;
-    margin-top: 100px;
     width: 150px;
+  }
+
+  #banner-internal .x {
+    line-height: 40px;
+  }
+
+  #banner-internal > img {
+    margin-top: 100px;
   }
 
 }
@@ -404,11 +430,29 @@ html,body {
   #banner-internal {
     margin-left: 20px;
     margin-right: 20px;
+    min-width: 350px;
   }
 
   #banner-internal img {
+    width: 150px;
+  }
+
+  #banner-internal > img {
+    float: left;
     margin-top: 70px;
-    max-width: 150px;
+  }
+
+  #banner-internal .x {
+    float: left;
+    margin-top: 70px;
+    line-height: 150px;
+    width: 50px;
+  }
+
+  #visions-banner {
+    float: left;
+    margin-top: 83px;
+    width: 150px;
   }
 
 }
@@ -503,6 +547,11 @@ html,body {
 
   #content {
     padding: 30px 0;
+  }
+
+  #content h1:nth-of-type(1) {
+    clear: both;
+    padding-top: 50px;
   }
 
   #content h1, #content h2, #content p, #content ul, #content ol, #content dl, #content .table-wrapper, #map-wrap {
